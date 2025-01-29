@@ -1,0 +1,136 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Navigation styles */
+nav {
+    background-color: #D5006D;
+    overflow: hidden;
+}
+
+nav a {
+    color: white;
+    float: left;
+    padding: 16px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav a:hover {
+    background-color: #f5a3c7;
+}
+
+/* Header styles */
+.header {
+    text-align: center;
+    padding: 20px;
+    background-color: #D5006D;
+    color: white;
+    font-weight: bold;
+}
+
+/* Main content and products */
+.main-content {
+    padding: 20px;
+}
+
+.home-products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.home-products .product {
+    width: 30%;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.home-products .product:hover {
+    transform: scale(1.05);
+}
+
+.home-products img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.home-products h3 {
+    margin-top: 10px;
+    color: #D5006D;
+    font-weight: bold;
+}
+
+.product-description {
+    font-size: 14px;
+    color: #777;
+    margin-top: 10px;
+}
+
+.product-price {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.btn-add-cart {
+    background-color: #D5006D;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.btn-add-cart:hover {
+    background-color: #f5a3c7;
+}
+
+/* Form styles */
+.info-section {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+input[type="text"], input[type="email"], input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn-submit {
+    background-color: #D5006D;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #D5006D;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+  

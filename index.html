@@ -1,69 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sq">
+
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>M|K COSMETIC</title>
-  <link rel="stylesheet" href="./M_K COSMETIC_files/style.css">
-  <style>
-    /* Basic styling for the cart popup */
-    #cartPopup {
-      position: fixed;
-      top: 0;
-      right: 0;
-      background-color: white;
-      width: 300px;
-      height: 100%;
-      box-shadow: -2px 0px 10px rgba(0,0,0,0.1);
-      padding: 20px;
-      display: none;
-      z-index: 1000;
-    }
 
-    #cartPopup h3 {
-      margin-top: 0;
-    }
-
-    #cartItems {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    #cartItems li {
-      margin-bottom: 10px;
-    }
-
-    .btn-close-cart {
-      background-color: #ff4e4e;
-      color: white;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-      margin-top: 20px;
-    }
-
-    .btn-close-cart:hover {
-      background-color: #ff2e2e;
-    }
-
-    /* Style for Cart icon in the navigation */
-    nav a#cartIcon {
-      cursor: pointer;
-    }
-
-    /* Hide all sections by default */
-    .info-section {
-      display: none;
-    }
-  </style>
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <!-- Navigimi -->
   <nav>
     <a href="javascript:void(0)" onclick="showSection('home')">Home</a>
     <a href="javascript:void(0)" onclick="showSection('about')">About</a>
     <a href="javascript:void(0)" onclick="showSection('contact')">Contact</a>
-    <a href="javascript:void(0)" id="cartIcon" onclick="showCart()">Cart (<span id="cartCount">0</span>)</a>
+    <a href="javascript:void(0)" id="cartLink" onclick="showSection('cart')">Cart (<span id="cartCount">0</span>)</a>
   </nav>
 
   <!-- Header -->
@@ -76,15 +29,14 @@
   <div id="home" class="main-content" style="display: block;">
     <h2>Produktet tona të Makeup-it</h2>
     <div class="home-products">
-      <!-- Produkti: Mascara -->
+      <!-- Produktet -->
       <div class="product">
         <img src="https://tse1.mm.bing.net/th?id=OIP.OCSVZ_RvlIDdmHZuV0Y-FwHaHa&pid=Api&P=0&h=220" alt="Mascara">
         <h3>Mascara Lifting</h3>
         <p class="product-description">Një mascara që ndihmon për volum të mahnitshëm.</p>
         <p class="product-price">€14.80</p>
-        <button class="btn-add-cart" onclick="addToCart('Mascara Lifting', 14.80)">Add to Cart</button>
+        <button class="btn-add-cart" onclick="addToCart('Mascara Lifting')">Add to Cart</button>
       </div>
-
       <!-- Produkti:Lipstick  -->
       <div class="product">
         <img src="https://tse4.mm.bing.net/th?id=OIP.cV0IWtxKycBG2vdaMkARCwHaHa&pid=Api&P=0&h=220" alt="Lipstick">
@@ -93,8 +45,7 @@
         <p class="product-price">€21.00</p>
         <button class="btn-add-cart" onclick="addToCart('Lipstick')">Add to Cart</button>
       </div>
-
-       <!-- Produkti: Foundation -->
+	  <!-- Produkti: Foundation -->
       <div class="product">
         <img src="https://tse1.mm.bing.net/th?id=OIP.v0ikl-IZJbiSJhz2LcloGQHaHa&pid=Api&P=0&h=220" alt="Foundation">
         <h3>Foundation Mat</h3>
@@ -102,9 +53,7 @@
         <p class="product-price">€25.00</p>
         <button class="btn-add-cart" onclick="addToCart('Foundation Mat')">Add to Cart</button>
       </div>
-
-
-     <!-- Produkti: Blush -->
+	  <!-- Produkti: Blush -->
       <div class="product">
         <img src="https://tse1.mm.bing.net/th?id=OIP.l3exS4hNeGFZt8UmyBCYWAHaHa&pid=Api&P=0&h=220" alt="Blush">
         <h3>Peachy Blush</h3>
@@ -112,8 +61,7 @@
         <p class="product-price">€16.30</p>
         <button class="btn-add-cart" onclick="addToCart('Peachy Blush', 16.30)">Add to Cart</button>
       </div>
-
-      <!-- Produkti: Eyeshadow Palette -->
+	   <!-- Produkti: Eyeshadow Palette -->
       <div class="product">
         <img src="https://tse1.mm.bing.net/th?id=OIP.RVCEMW_jgR_c3dpjB8w3VgHaHa&pid=Api&P=0&h=220" alt="Eyeshadow Palette">
         <h3>Eyeshadow Palette</h3>
@@ -121,8 +69,7 @@
         <p class="product-price">€20.00</p>
         <button class="btn-add-cart" onclick="addToCart('Eyeshadow Palette')">Add to Cart</button>
       </div>
-
-       Produkti:Eyeliner  -->
+	  <!-- Produkti:Eyeliner  -->
       <div class="product">
         <img src="https://tse4.mm.bing.net/th?id=OIP.-uWhX2mXlvijPeZ-ipD_qQHaHa&pid=Api&P=0&h=220" alt="Eyeliner">
         <h3>Eyeliner</h3>
@@ -130,7 +77,7 @@
         <p class="product-price">€8.00</p>
         <button class="btn-add-cart" onclick="addToCart('Eyeliner')">Add to Cart</button>
       </div>
-	   <!-- Produkti: Bronzer -->
+	  <!-- Produkti: Bronzer -->
       <div class="product">
         <img src="https://tse1.mm.bing.net/th?id=OIP.kwGWWgHUYP-AZAE1jr8L-AHaJf&pid=Api&P=0&h=220" alt="Bronzer">
         <h3>Bronzer</h3>
@@ -138,7 +85,7 @@
         <p class="product-price">€19.00</p>
         <button class="btn-add-cart" onclick="addToCart('Bronzer')">Add to Cart</button>
       </div>
-	  <!-- Produkti:Lip pencil  -->
+	  	   <!-- Produkti:Lip pencil  -->
       <div class="product">
         <img src="https://tse4.mm.bing.net/th?id=OIP.ZTuJYPWMDJN6s3uCpQf-JAHaHa&pid=Api&P=0&h=220" alt="Lip pencil">
         <h3>Lip pencil </h3>
@@ -146,7 +93,7 @@
         <p class="product-price">€6.00</p>
         <button class="btn-add-cart" onclick="addToCart('Lip pencil ')">Add to Cart</button>
       </div>
-	   <!-- Produkti: Corrector -->
+<!-- Produkti: Corrector -->
       <div class="product">
         <img src="https://tse2.mm.bing.net/th?id=OIP.ygICbfmPW53z88AeXg8IlAAAAA&pid=Api&P=0&h=220" alt="Corrector">
         <h3>Corrector</h3>
@@ -154,7 +101,7 @@
         <p class="product-price">€15.50</p>
         <button class="btn-add-cart" onclick="addToCart('Corrector')">Add to Cart</button>
       </div>
-	  <!-- Produkti: Concealer -->
+	   <!-- Produkti: Concealer -->
       <div class="product">
         <img src="https://tse2.mm.bing.net/th?id=OIP.9fOt9MX2K-GBDQu3dc2j6AHaKs&pid=Api&P=0&h=220" alt="Concealer">
         <h3>Concealer</h3>
@@ -162,7 +109,7 @@
         <p class="product-price">€17.00</p>
         <button class="btn-add-cart" onclick="addToCart('Concealer')">Add to Cart</button>
       </div>
-	  <!-- Produkti: Hydra Cream -->
+	   <!-- Produkti: Hydra Cream -->
       <div class="product">
         <img src="https://tse4.mm.bing.net/th?id=OIP.xvUjza6b5oFtcVK8uPYvlgHaHa&pid=Api&P=0&h=220" alt="Hydra Cream">
         <h3>Hydra Cream</h3>
@@ -170,7 +117,7 @@
         <p class="product-price">€22.00</p>
         <button class="btn-add-cart" onclick="addToCart('Hydra Cream')">Add to Cart</button>
       </div>
-	  <!-- Produkti: Baking Powder -->
+	   <!-- Produkti: Baking Powder -->
       <div class="product">
         <img src="https://tse2.mm.bing.net/th?id=OIP.PsBk_0cJAHefjtze1sBYJgHaHk&pid=Api&P=0&h=220" alt="Baking Powder">
         <h3>Baking Powder</h3>
@@ -189,10 +136,16 @@
     </div>
   </div>
 
+  <!-- Seksioni Cart -->
+  <div id="cart" class="info-section" style="display: none;">
+    <h2>Shporta Juaj</h2>
+    <div id="cartItems">Nuk ka asnjë produkt në shportë.</div>
+    <button class="btn-checkout" onclick="checkout()">Paguaj</button>
+  </div>
+
   <!-- Seksioni About -->
-  <div id="about" class="info-section">
+  <div id="about" class="info-section" style="display: none;">
     <h2>Rreth M|K Cosmetic</h2>
- 
     <p>Dyqani ynë ofron produkte makeup-i nga marka prestigjoze italiane KIKO, të cilat janë të njohura për cilësinë e lartë dhe përzgjedhjen e kujdesshme të përbërësve. Ne besojmë se makeup-i ka fuqinë për të rritur besimin dhe për të nxjerrë bukurinë natyrore të çdo individi.</p>
     
     <p>Produktet tona janë të formuluara me përbërës që respektojnë lëkurën dhe ofrojnë rezultate të shkëlqyera për çdo tip të lëkurës. Ato janë të siguruara nga furnizuesit më të besueshëm dhe me standardet më të larta ndërkombëtare.</p>
@@ -214,120 +167,101 @@
 	  <li><strong>Corrector:</strong> Produkt që përdoret për të fshehur njollat, shenjat e errëta dhe defektet e lëkurës, duke ofruar mbulim më të plotë dhe të natyrshëm</li>
 	  <li><strong>Concealer:</strong> Korektor i ngjashëm, por zakonisht përdoret për të mbuluar më shumë imperfeksionet si qarqet e errëta nën sy, aknet dhe më shumë, duke ofruar një mbulim të dendur dhe të qëndrueshëm.</li>
    </ul>
-	
-
-    <p>Kjo është vetëm një pjesë e vogël e përbërësve që përdorim për të siguruar që produktet tona të jenë të sigurta, efektive dhe miqësore për lëkurën tuaj. Ne gjithashtu sigurojmë që asnjë produkt të mos përmbajë kimikate të dëmshme, duke u përpjekur të ofrojmë mundësinë e përdorimit të sigurt për të gjithë.</p>
   </div>
-
-  </div>
-
-  
 
   <!-- Seksioni Contact -->
-  <div id="contact" class="info-section">
+  <div id="contact" class="info-section" style="display: none;">
     <h2>Kontakt dhe Mbyllja e Porosisë</h2>
-    <p>Plotësoni të dhënat për të mbyllur porosinë tuaj:</p>
-
-    <!-- Form for order details -->
     <form id="orderForm">
-      <div class="form-group">
-        <label for="firstName">Emri:</label>
-        <input type="text" id="firstName" name="firstName" required placeholder="Shkruaj emrin tuaj">
-      </div>
+      <label for="firstName">Emri:</label>
+      <input type="text" id="firstName" name="firstName" required><br><br>
 
-      <div class="form-group">
-        <label for="lastName">Mbiemri:</label>
-        <input type="text" id="lastName" name="lastName" required placeholder="Shkruaj mbiemrin tuaj">
-      </div>
+      <label for="lastName">Mbiemri:</label>
+      <input type="text" id="lastName" name="lastName" required><br><br>
 
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required placeholder="Shkruaj emailin tuaj">
-      </div>
+      <label for="phone">Numri i Telefonit:</label>
+      <input type="tel" id="phone" name="phone" required><br><br>
 
-      <div class="form-group">
-        <label for="address">Adresa:</label>
-        <input type="text" id="address" name="address" required placeholder="Shkruaj adresën tuaj">
-      </div>
+      <label for="email">Adresa Email:</label>
+      <input type="email" id="email" name="email" required><br><br>
 
-      <div class="form-group">
-        <label for="phone">Numri i telefonit:</label>
-        <input type="tel" id="phone" name="phone" required placeholder="Shkruaj numrin e telefonit">
-      </div>
+      <label for="address">Adresa e Banimit:</label>
+      <input type="text" id="address" name="address" required><br><br>
 
-      <button type="submit" class="btn-submit">Dërgo Porosinë</button>
+      <button type="submit" class="btn-submit">Konfirmo Porosinë</button>
     </form>
   </div>
 
-  <!-- Cart Popup -->
-  <div id="cartPopup">
-    <h3>Your Cart</h3>
-    <ul id="cartItems"></ul>
-    <button class="btn-close-cart" onclick="closeCart()">Close</button>
-  </div>
-
- 
-
   <!-- JavaScript -->
   <script>
-    // Cart array to store added products
-    let cart = [];
+    let cart = [];  // Array për të ruajtur produktet e shtuara në shportë
 
-    // Function to show sections
+    // Funksioni për të shfaqur seksionet
     function showSection(section) {
-      // Hide all sections first
       const sections = document.querySelectorAll('.info-section, #home');
       sections.forEach(sec => sec.style.display = 'none');
 
-      // Show the selected section
       if (section === 'home') {
         document.getElementById('home').style.display = 'block';
+      } else if (section === 'cart') {
+        displayCart();
+        document.getElementById('cart').style.display = 'block';
       } else {
         document.getElementById(section).style.display = 'block';
       }
-      
-      // Hide the cart popup when navigating between sections
-      closeCart();
     }
 
-    // Add item to cart
-    function addToCart(productName, price) {
-      cart.push({ name: productName, price: price });
+    // Funksioni për të shtuar produkt në shportë
+    function addToCart(productName) {
+      cart.push(productName);
+      alert(productName + ' është shtuar në karrocë!');
       updateCartCount();
     }
 
-    // Update cart icon count
+    // Funksioni për të përditësuar numrin e produkteve në shportë
     function updateCartCount() {
-      document.getElementById('cartCount').innerText = cart.length;
+      document.getElementById('cartCount').innerText = cart.length;  // Përditëson numrin në menu
     }
 
-    // Show cart popup
-    function showCart() {
-      const cartItemsList = document.getElementById('cartItems');
-      cartItemsList.innerHTML = '';
-      cart.forEach(item => {
-        const listItem = document.createElement('li');
-        listItem.textContent = ${item.name} - €${item.price};
-        cartItemsList.appendChild(listItem);
-      });
-      document.getElementById('cartPopup').style.display = 'block';
+    // Funksioni për të shfaqur produktet në shportë
+    function displayCart() {
+      const cartItems = document.getElementById('cartItems');
+      if (cart.length > 0) {
+        cartItems.innerHTML = cart.map(item => `<p>${item}</p>`).join('');
+      } else {
+        cartItems.innerHTML = 'Nuk ka asnjë produkt në shportë.';
+      }
     }
 
-    // Close the cart popup
-    function closeCart() {
-      document.getElementById('cartPopup').style.display = 'none';
+    // Funksioni për të bërë pagesën (i thjeshtë për këtë shembull)
+    function checkout() {
+      if (cart.length === 0) {
+        alert("Shporta është bosh! Shtoni produkte para se të bëni porosi.");
+      } else {
+        alert("Porosia juaj është dërguar për përpunim!");
+        cart = [];  // Pas procesimit të porosisë, mund ta zbrazim shportën
+        updateCartCount();  // Përditëson numrin në menu
+      }
     }
 
-    // Handle form submission
+    // Funksioni për të parandaluar formën që të dërgohet dhe për të konfirmuar porosinë
     document.getElementById("orderForm").onsubmit = function (event) {
-      event.preventDefault();
-      alert("Porosia juaj është dërguar!");
+      event.preventDefault();  // Pengon dërgimin e formularit
+      const firstName = document.getElementById('firstName').value;
+      const lastName = document.getElementById('lastName').value;
+      const phone = document.getElementById('phone').value;
+      const email = document.getElementById('email').value;
+      const address = document.getElementById('address').value;
 
-      // Simulate email alert
-      setTimeout(() => {
-        alert("Një email konfirmimi është dërguar!");
-      }, 1000);
+      alert(`Porosia u konfirmua!\nEmri: ${firstName} ${lastName}\nNumri i Telefonit: ${phone}\nEmail: ${email}\nAdresa e Banimit: ${address}`);
+      cart = [];  // Pas konfirmimit, mund ta zbrazim shportën
+      updateCartCount();  // Përditëson numrin në menu
     };
   </script>
+
 </body>
+
 </html>
+
+
+
